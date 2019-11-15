@@ -1,4 +1,4 @@
-#addition of slang phrases works with english and russian languages
+#addition of slang phrases works with english and russian languages. 3 file names are required 0 - slang.py, 1 - read from, 2 - write to
 # -*- coding: utf-8 -*- 
 import random 	#for random expressions
 import re		#for regular expressions
@@ -7,9 +7,7 @@ import codecs	#for russian language
 
 #open file and read lines from it, get content from all lines
 f = codecs.open(sys.argv[1], 'r', 'utf-8') 
-line_out = ""
-for line in f:
-	line_out+=line
+line_out = ('').join(line for line in f)
 f.close()
 
 #get slang phrases as list of strings russian and english differs with codes
@@ -20,8 +18,7 @@ slang_phrases = slang_phrases_english if ord(re.findall(r'^.*?\w+',line_out)[0][
 
 #get list of sentences using regular expressions
 splited_string = re.split(r'[.!?]',line_out)
-splited_string.pop() #last element is always '', so it can be deleted using pop()
-#print(splited_string)
+splited_string.pop() if re.findall(r'\w',splited_string[-1]) == [] else splited_string # deleteting last element if it's not containing letter
 
 #make new setences with slang phrases and write them to other file
 f = codecs.open(sys.argv[2], 'w', 'utf-8')
