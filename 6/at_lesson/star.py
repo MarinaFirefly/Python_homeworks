@@ -1,3 +1,5 @@
+#briliant. Only odd numbers must be entered!
+
 def star(number):
     for i in range(number):
         quantity_slash = abs(number // 2 - i)
