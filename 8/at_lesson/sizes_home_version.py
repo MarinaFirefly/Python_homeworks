@@ -22,9 +22,9 @@ def find_sizes(size_type_f,size_f,to_type_f):
 	for element in sizes: 		# look at all elements in tuple
 		for key, value in element.items(): 	# look at all elements in dictionary by key and value
 			if key == size_type_f and value == size_f: 	# find when size type and size are the same with input data
-				res+=element.get(to_type,'undefined') + " " # add value of new type
+				res+=element.get(to_type,'undefined. System or size are out of base!') + " " # add value of new type
 				cnt+=1
 	
-	return res + "undefined. System or size are out of base!" if cnt ==0 else res + to_type_f +"."			# return result
+	return res + "undefined. System or size are out of base!" if cnt ==0 else res		# return result
 
 print(find_sizes(size_type,size,to_type))
