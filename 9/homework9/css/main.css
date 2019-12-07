@@ -1,0 +1,33 @@
+body{
+    padding: 0%;
+    background: #816f6f;
+}
+#all-content{
+    position: absolute;
+    left:50%;
+    top: 47%;                
+    transform: translate(-50%, -50%);
+}
+.form-name{
+    text-align: center;
+    color: #46a9eb;
+    font-size: 24px;
+    margin: 3%;
+}
+.container { 
+    position: relative;
+    background: #f3eded;
+    text-align: left;
+    margin: 2%;
+    padding: 2%;
+    border-radius: 2%;
+}
+.footer{
+    color: #46a9eb;
+    text-align: center;
+    background-color: #f3eded;;
+    position: fixed;
+    width: 100%;
+    top: 97%;
+    bottom: 0%
+ }
