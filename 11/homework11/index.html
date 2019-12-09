@@ -1,111 +1,117 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/main.css" />
-    <title>
-        My Bootsrap Form
-    </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/main.css" />
+  <title>
+    My Bootsrap Form
+  </title>
 </head>
+
 <body>
-    <div id="all-content">
-        <div class="form-name">
-            Please fill the form. It won't lead to anything, but you can do it for your pleasure.
+  <div id="all-content">
+    <div class="form-name">
+      Please fill the form. It won't lead to anything, but you can do it for your pleasure.
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+
         </div>
-        <div class="container">
-                <div class="row">
-                  <div class="col">
-                    
+        <div class="col-10">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">Region</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Kharkiv</option>
+                  <option>Poltava</option>
+                  <option>Kyiv</option>
+                  <option>Dnepr</option>
+                  <option>Odessa</option>
+                  <option>other</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+              </div>
+            </div>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Choose your gender</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+                      checked>
+                    <label class="form-check-label" for="gridRadios1">
+                      Male
+                    </label>
                   </div>
-                  <div class="col-10">
-                        <form>
-                                <div class="form-row">
-                                  <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail4">
-                                  </div>
-                                  <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Password</label>
-                                    <input type="password" class="form-control" id="inputPassword4">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="inputAddress">Address</label>
-                                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                </div>
-                                <div class="form-group">
-                                  <label for="inputAddress2">Address 2</label>
-                                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                                </div>
-                                <div class="form-row">
-                                  <div class="form-group col-md-6">
-                                    <label for="inputCity">City</label>
-                                    <input type="text" class="form-control" id="inputCity">
-                                  </div>
-                                  <div class="form-group col-md-4">
-                                    <label for="inputState">Region</label>
-                                    <select id="inputState" class="form-control">
-                                      <option selected>Kharkiv</option>
-                                      <option>Poltava</option>
-                                      <option>Kyiv</option>
-                                      <option>Dnepr</option>
-                                      <option>Odessa</option>
-                                      <option>other</option>
-                                    </select>
-                                  </div>
-                                  <div class="form-group col-md-2">
-                                    <label for="inputZip">Zip</label>
-                                    <input type="text" class="form-control" id="inputZip">
-                                  </div>
-                                </div>
-                                <fieldset class="form-group">
-                                        <div class="row">
-                                          <legend class="col-form-label col-sm-2 pt-0">Choose your gender</legend>
-                                          <div class="col-sm-10">
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                              <label class="form-check-label" for="gridRadios1">
-                                                Male
-                                              </label>
-                                            </div>
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                              <label class="form-check-label" for="gridRadios2">
-                                                Female
-                                              </label>
-                                            </div>
-                                            <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                                    <label class="form-check-label" for="gridRadios2">
-                                                            Indefined
-                                                    </label>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </fieldset>
-                                <div class="form-group">
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                                    <label class="form-check-label" for="gridCheck">
-                                      Check me out
-                                    </label>
-                                  </div>
-                                </div>
-                                <button type="submit" class="btn btn-outline-primary">Sign in</button>
-                              </form>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                      Female
+                    </label>
                   </div>
-                  <div class="col">
-                   
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                      Indefined
+                    </label>
                   </div>
                 </div>
-                
+              </div>
+            </fieldset>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-outline-primary">Sign in</button>
+          </form>
         </div>
+        <div class="col">
+
         </div>
-        <footer class="footer">
-            <p>by Laktionova</p>
-        </footer>
+      </div>
+
+    </div>
+  </div>
+  <footer class="footer">
+    <p>by Laktionova</p>
+  </footer>
 </body>
+
 </html>
