@@ -1,0 +1,177 @@
+--look what db are present
+postgres=# \l 
+
+--go to 'cooker' db
+postgres=# \c cooker
+
+--what tables are in 'cooker'
+cooker=# \d
+                 List of relations
+ Schema |        Name        |   Type   |  Owner
+--------+--------------------+----------+----------
+ public | courses            | table    | postgres
+ public | courses_id_seq     | sequence | postgres
+ public | ingredients        | table    | postgres
+ public | ingredients_id_seq | sequence | postgres
+(4 rows)
+
+--look at table 'courses'
+cooker=# SELECT * FROM courses;
+ id |           name           | diet | easiness | time
+----+--------------------------+------+----------+------
+  1 | omelette                 | t    | t        |   15
+  2 | soup with meat and pasta | t    | t        |   90
+  3 | pasta with sausages      | f    | t        |   30
+  4 | borshch                  | f    | f        |   90
+  5 | fritters                 | f    | t        |   40
+  1 | omelette                 | t    | t        |   15
+  2 | soup with meat and pasta | t    | t        |   90
+  3 | pasta with sausages      | f    | t        |   30
+  4 | borshch                  | f    | f        |   90
+  5 | fritters                 | f    | t        |   40
+(10 rows)
+
+--all my rows were duplicated. Hm-m-m
+
+--add column 'row_id'
+cooker=# ALTER TABLE courses ADD COLUMN row_id serial;
+ALTER TABLE
+cooker=# SELECT * FROM courses;
+ id |           name           | diet | easiness | time | row_id
+----+--------------------------+------+----------+------+--------
+  1 | omelette                 | t    | t        |   15 |      1
+  2 | soup with meat and pasta | t    | t        |   90 |      2
+  3 | pasta with sausages      | f    | t        |   30 |      3
+  4 | borshch                  | f    | f        |   90 |      4
+  5 | fritters                 | f    | t        |   40 |      5
+  1 | omelette                 | t    | t        |   15 |      6
+  2 | soup with meat and pasta | t    | t        |   90 |      7
+  3 | pasta with sausages      | f    | t        |   30 |      8
+  4 | borshch                  | f    | f        |   90 |      9
+  5 | fritters                 | f    | t        |   40 |     10
+(10 rows)
+
+--delete every row where row_id > 5
+cooker=# DELETE FROM courses WHERE row_id > 5
+cooker-# ;
+DELETE 5
+
+--Now looks ok!
+cooker=# ALTER TABLE courses DROP COLUMN row_id;
+ALTER TABLE
+cooker=# SELECT * FROM courses;
+ id |           name           | diet | easiness | time
+----+--------------------------+------+----------+------
+  1 | omelette                 | t    | t        |   15
+  2 | soup with meat and pasta | t    | t        |   90
+  3 | pasta with sausages      | f    | t        |   30
+  4 | borshch                  | f    | f        |   90
+  5 | fritters                 | f    | t        |   40
+(5 rows)
+
+--table with ingredients
+cooker=# SELECT * FROM ingredients;
+ id |        name         | price_per_kg
+----+---------------------+--------------
+  1 | eggs                |           25
+  2 | milk                |           20
+  3 | salt                |           10
+  4 | pepper              |           10
+  5 | meat                |           10
+  6 | potatoes            |           20
+  7 | carrot              |           10
+  8 | onion               |           10
+  9 | pasta               |           40
+ 10 | greens              |          200
+ 11 | sausages            |          200
+ 12 | beet                |           20
+ 13 | cabage              |           20
+ 14 | garlic              |          100
+ 15 | flour               |           20
+ 16 | kefir               |           20
+ 17 | soda                |           20
+ 18 | souce from tomatoes |           40
+ 19 | sugar               |           20
+ 20 | oil                 |           30
+(20 rows)
+
+--create new table
+--many to many relationship?
+--quantity in kg
+cooker=# CREATE TABLE id_course integer, id_ingr integer, quantity numeric);
+CREATE TABLE
+
+--insert values
+cooker=# INSERT INTO igr_for_course(id_course, id_ingr, quantity) VALUES (1,1,0.3);
+INSERT 0 1
+cooker=# INSERT INTO igr_for_course(id_course, id_ingr, quantity) VALUES (1,2,0.05);
+INSERT 0 1
+cooker=# INSERT INTO igr_for_course(id_course, id_ingr, quantity) VALUES (1,3,0.005);
+INSERT 0 1
+cooker=# INSERT INTO igr_for_course(id_course, id_ingr, quantity) VALUES (1,4,0.1);
+INSERT 0 1
+cooker=# INSERT INTO igr_for_course(id_course, id_ingr, quantity) VALUES (1,10,0.03);
+INSERT 0 1
+cooker=# INSERT INTO igr_for_course(id_course, id_ingr, quantity) VALUES (1,20,0.03);
+INSERT 0 1
+cooker=# SELECT * FROM igr_for_course;
+ id_course | id_ingr | quantity
+-----------+---------+----------
+         1 |       1 |      0.3
+         1 |       2 |     0.05
+         1 |       3 |    0.005
+         1 |       4 |      0.1
+         1 |      10 |     0.03
+         1 |      20 |     0.03
+(6 rows)
+
+--after all insertions 
+cooker=# SELECT * FROM igr_for_course;
+ id_course | id_ingr | quantity
+-----------+---------+----------
+         1 |       1 |      0.3
+         1 |       2 |     0.05
+         1 |       3 |    0.005
+         1 |       4 |      0.1
+         1 |      10 |     0.03
+         1 |      20 |     0.03
+         3 |       3 |    0.005
+         3 |       4 |      0.1
+         3 |       8 |    0.015
+         3 |       9 |      0.4
+         3 |      10 |     0.05
+         3 |      11 |      0.4
+         3 |      14 |     0.05
+         3 |      20 |     0.03
+         2 |       3 |     0.01
+         2 |       4 |      0.1
+         2 |       5 |      0.5
+         2 |       6 |      0.2
+         2 |       7 |     0.15
+         2 |       8 |     0.15
+         2 |      10 |     0.05
+         2 |      14 |     0.05
+         2 |      20 |     0.03
+         4 |       3 |     0.01
+         4 |       4 |      0.1
+         4 |       5 |      0.5
+         4 |       6 |      0.2
+         4 |       7 |     0.15
+         4 |       8 |     0.15
+         4 |      10 |     0.05
+         4 |      12 |      0.2
+         4 |      13 |      0.3
+         4 |      14 |     0.05
+         4 |      18 |      0.1
+         4 |      19 |     0.01
+         4 |      20 |     0.03
+         5 |       1 |      0.2
+         5 |       3 |    0.005
+         5 |      15 |     0.25
+         5 |      16 |      0.2
+         5 |      17 |     0.05
+         5 |      19 |     0.05
+         5 |      20 |     0.05
+(43 rows)
+
+
