@@ -1,5 +1,6 @@
-#import sys
 from .employee import Employee
+
+
 # class Programmer is inherited from Employee
 class Programmer(Employee):
     #method work is redefined (task 5)
@@ -18,7 +19,5 @@ class Programmer(Employee):
         return len(self.data.get("tech_stack")) == len(other.data.get("tech_stack"))
 
     #method that allows to get alpha programmer
-    def __add__(self, other):
-        prog = Programmer(None,None,None,0)
-        prog.day_salary = self.day_salary + other.day_salary
-        return prog
+    def __add__(self,other):
+        return self.day_salary + other.day_salary

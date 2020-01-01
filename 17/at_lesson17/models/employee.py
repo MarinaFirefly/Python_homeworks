@@ -1,4 +1,6 @@
-# Parent class 
+import datetime
+
+
 class Employee:
     #in **data any additional information can be put
     def __init__(self,name,email,phone,day_salary,**data):
@@ -11,7 +13,6 @@ class Employee:
 
 # function that returns amount of working days in the month without some hilidays
     def working_days(self):
-        import datetime
         now = datetime.date.today()
         start_month = datetime.date(now.year,now.month,1)
         diff = (now - start_month).days + 1
@@ -30,7 +31,7 @@ class Employee:
         return "I come to the office."
     #method check_salary returns salary for given amount of days
     #if method is called without argument, working days from begging of the month are counted
-    def check_salary (self, days=None):
+    def check_salary (self,days=None):
         if days == None:
             days = self.working_days()
-        return "My salary is " + str(self.day_salary*days)
+        return "My salary is " + str(self.day_salary * days)

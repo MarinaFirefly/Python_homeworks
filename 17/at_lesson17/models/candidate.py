@@ -1,5 +1,3 @@
-#from .employee import Employee
-
 class Candidate:
     #in **data any additional information can be put
     def __init__(self,full_name,email,technologies,main_skill,main_skills_grade,**data):

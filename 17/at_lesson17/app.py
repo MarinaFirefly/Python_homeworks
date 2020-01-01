@@ -14,6 +14,7 @@ if __name__ == '__main__':
     if programmer_Ivan > programmer_Ivan2:
         print ("More skills")
     else: print ("Not more skills!")
+    print(programmer_Ivan + programmer_Ivan2)
 
     candidate_1 = Candidate("Ivan Ivanov","van_ka@gmail.com","[C#,C++]","[C++]","middle")
     candidate_2 = Candidate("Petr Petrov","pet_ka@gmail.com","[Java,C++]","[Java]","middle")
