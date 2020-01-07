@@ -1,3 +1,4 @@
+import sqlite3
 from .employee import Employee
 
 
@@ -28,6 +29,24 @@ class Programmer(Employee):
     def __add__(self,other):
         #method that allows to get alpha programmer
         return self.salary_per_day + other.salary_per_day
+
+    def save_to_db(self):
+        #add object to db
+        conn = sqlite3.connect("employees.db")
+        cursor = conn.cursor()
+        try:
+            #try will work if table exists in db
+            if cursor.execute("SELECT * FROM programmers"):
+                cursor.execute("SELECT COUNT(*) FROM programmers")
+                id = cursor.fetchone()[0]+1 #count number of rows and make id bigger on 1
+                obj = [(id,self.first_name,self.last_name,self.email,self.phone,self.hired_at,
+                    self.salary_per_day,self.main_skill,str(self.data))]
+                cursor.executemany("INSERT INTO programmers VALUES (?,?,?,?,?,?,?,?,?)", obj)
+                conn.commit()
+        except:
+            print("Table with name {table} doesn't exist!".format(table = self.table_name))
+        finally:
+            conn.close()
 
 
 class Recruiter(Employee):

@@ -49,40 +49,5 @@ else:
             datetime.datetime.now()
         )
         f.write(message)
-
 finally:
     print('Exception was handled. Check log for additional info!')
-
-'''
-    candidate_1 = Candidate("Ivan Ivanov","van_ka@gmail.com","[C#,C++]","[C++]","middle")
-    candidate_2 = Candidate("Petr Petrov","pet_ka@gmail.com","[Java,C++]","[Java]","middle")
-    candidate_3 = Candidate("Zhora Zhorov","zhor_ka@gmail.com","[PHP,JS]","[PHP]","middle")
-    candidate_4 = Candidate("Zhora Zhorov","zhor_ka@gmail.com","[PHP,JS]","[PHP]","middle")
-    print(candidate_1.full_name)
-    print(candidate_2.email)
-    print(candidate_3.main_skill)
-
-    def check_emails3(persons):
-        emails = []
-        for i in persons:
-            emails.append(i.email)
-        if len(emails) > len(set(emails)):
-            raise ValueError
-
-    check_emails3([candidate_1,candidate_2,candidate_3,candidate_4])
-'''
-"""
-    def check_emails(*email):
-        print("Some email isn't unique!") if len(set(email)) < len(list(email)) else print("Emails are unique")
-    check_emails(candidate_1.email,candidate_2.email,candidate_3.email)
-    
-    def check_emails2(*email):
-        return len(set(email)) == len(list(email))
-
-    if not check_emails2(candidate_1.email,candidate_2.email,candidate_3.email,candidate_4.email):
-        raise ValueError
-    vacancy_php = Vacancy("PHP","PHP","junior")
-    vacancy_Cplus = Vacancy("C++","C++","midle")
-    print(vacancy_Cplus.title)
-    print(vacancy_php.main_skill)
-"""
