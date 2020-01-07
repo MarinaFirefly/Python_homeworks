@@ -5,7 +5,7 @@ from models.inherited_classes import Recruiter
 from models.inherited_classes import Candidate
 from models.vacancy import Vacancy
 
-files_with_emails = open('emails','w+')
+files_with_emails = open('data/emails','w+')
 files_with_emails.truncate(0)
 
 try:
@@ -28,7 +28,7 @@ try:
         print(candidate_1.work())
         
 except ValueError as error:
-    with open('logs.txt','a+') as f:
+    with open('data/logs.txt','a+') as f:
         message = '{}   {}:\n {} \n\n'.format(
             datetime.datetime.now(),
             error.__class__.__name__,
@@ -36,7 +36,7 @@ except ValueError as error:
         )
         f.write(message)
 except TypeError as error:
-    with open('logs.txt','a+') as f:
+    with open('data/logs.txt','a+') as f:
         message = '{}   {}:\n {} \n\n'.format(
             datetime.datetime.now(),
             error.__class__.__name__,
@@ -44,7 +44,7 @@ except TypeError as error:
         )
         f.write(message)
 else:
-    with open('logs.txt','a+') as f:
+    with open('data/logs.txt','a+') as f:
         message = '{}:\n Unknown error'.format(
             datetime.datetime.now()
         )

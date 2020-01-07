@@ -39,7 +39,7 @@ class ForTablesInDb:
                 fields = """CREATE TABLE IF NOT EXISTS iterviews
                 (id serial, vacancy text, programer text, recruiter text, 
                 candidate text, datetime_of_int text, feedback text, result text)"""
-            conn = sqlite3.connect("employees.db")
+            conn = sqlite3.connect("data/employees.db")
             cursor = conn.cursor()
             cursor.execute(fields)
             conn.close()
@@ -48,7 +48,7 @@ class ForTablesInDb:
 
     def add_to_db(self,obj):
         #add rows to db
-        conn = sqlite3.connect("employees.db")
+        conn = sqlite3.connect("data/employees.db")
         cursor = conn.cursor()
         try:
             #try will work if table exists in db
@@ -83,7 +83,7 @@ class ForTablesInDb:
 
     def read_from_db(self):
         #print all rows from the table if it exists
-        conn = sqlite3.connect("employees.db")
+        conn = sqlite3.connect("data/employees.db")
         cursor = conn.cursor()
         try:
             cursor.execute("SELECT * FROM {table_name}".format(table_name=self.table_name))
@@ -95,7 +95,7 @@ class ForTablesInDb:
 
     def delete_from_db(self):
         #delete table from db
-        conn = sqlite3.connect("employees.db")
+        conn = sqlite3.connect("data/employees.db")
         cursor = conn.cursor()
         try:
             cursor.execute("DROP TABLE {table_name}".format(table_name = self.table_name))

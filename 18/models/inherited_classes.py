@@ -32,7 +32,7 @@ class Programmer(Employee):
 
     def save_to_db(self):
         #add object to db
-        conn = sqlite3.connect("employees.db")
+        conn = sqlite3.connect("data/employees.db")
         cursor = conn.cursor()
         try:
             #try will work if table exists in db
