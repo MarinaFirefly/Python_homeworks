@@ -1,0 +1,34 @@
+2020-01-06 12:29:37.044190   ZeroDivisionError:
+ Traceback (most recent call last):
+  File "C:\work\Python\home_and_at_lesson\18\app.py", line 12, in <module>
+    1/0
+ZeroDivisionError: division by zero
+ 
+
+2020-01-06 12:30:37.132450   ValueError:
+ Traceback (most recent call last):
+  File "C:\work\Python\home_and_at_lesson\18\app.py", line 25, in <module>
+    programmer_Ivan3.validate()
+  File "C:\work\Python\home_and_at_lesson\18\models\employee.py", line 42, in validate
+    raise ValueError
+ValueError
+ 
+
+2020-01-06 12:31:55.573917   TypeError:
+ Traceback (most recent call last):
+  File "C:\work\Python\home_and_at_lesson\18\app.py", line 28, in <module>
+    print(candidate_1.work())
+  File "C:\work\Python\home_and_at_lesson\18\models\inherited_classes.py", line 71, in work
+    raise TypeError
+TypeError
+ 
+
+2020-01-06 12:36:59.406800   TypeError:
+ Traceback (most recent call last):
+  File "C:\work\Python\home_and_at_lesson\18\app.py", line 28, in <module>
+    print(candidate_1.work())
+  File "C:\work\Python\home_and_at_lesson\18\models\inherited_classes.py", line 71, in work
+    raise TypeError
+TypeError
+ 
+

@@ -61,8 +61,11 @@ class Recruiter(Employee):
             return "Nobody was hired this month!"
 
 
-class Candidate:
+class Candidate(Employee):
     #in **data any additional information can be put
     def __init__(self,first_name,last_name,email,phone,main_skill):
         super().__init__(first_name,last_name,email,phone)
         self.main_skill = main_skill
+
+    def work(self):
+        raise TypeError
