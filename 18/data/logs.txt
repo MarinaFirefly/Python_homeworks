@@ -50,3 +50,12 @@ TypeError
 TypeError
  
 
+2020-01-07 22:16:28.628621   TypeError:
+ Traceback (most recent call last):
+  File "C:\work\Python\home_and_at_lesson\18\app.py", line 28, in <module>
+    print(candidate_1.work())
+  File "C:\work\Python\home_and_at_lesson\18\models\inherited_classes.py", line 90, in work
+    raise TypeError
+TypeError
+ 
+

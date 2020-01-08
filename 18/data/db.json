@@ -1,0 +1,153 @@
+{
+    "programmers": [
+      {
+        "id": 1,
+        "first_name": "Vasilii",
+        "last_name": "Vasikov",
+        "email": "vasva@vas.vas",
+        "phone": "12-12-123",
+        "hired_at": "12-12-19",
+        "salary_per_day":60,
+        "main_skill":"C#",
+        "additional_info":"tech_stack:[C++,Java,C#],closed_this_month: 2"
+      },
+      {
+        "id": 2,
+        "first_name": "Vasilii",
+        "last_name": "NeVasikov",
+        "email":"nevasvas@vas.vas",
+        "phone":"12-12-124",
+        "hired_at":"12-12-17",
+        "salary_per_day":80,
+        "main_skill":"Java",
+        "additional_info":"tech_stack:[C++,Java,C#],closed_this_month: 3"
+      },
+      {
+        "id": 3,
+        "first_name": "Vasilii",
+        "last_name": "SovsemNeVasikov",
+        "email":"snvasvas@vas.vas",
+        "phone":"12-12-125",
+        "hired_at":"12-12-16",
+        "salary_per_day":100,
+        "main_skill":"Python",
+        "additional_info":"tech_stack:[JS,PHP,Python],closed_this_month:4"
+      }
+    ],
+    "recruiters": [
+        {
+          "id": 1,
+          "first_name": "Zhora",
+          "last_name": "Zhorov",
+          "email":"zhvas@vas.vas",
+          "phone":"12-12-126",
+          "hired_at":"12-11-19",
+          "salary_per_day":50
+        },
+        {
+          "id": 2,
+          "first_name": "Zhora",
+          "last_name": "Nezhorov",
+          "email":"nezhvas@vas.vas",
+          "phone":"12-12-127",
+          "hired_at":"12-10-19",
+          "salary_per_day":60
+        }
+      ],
+      "vacancies": [
+        {
+          "id": 1,
+          "title": "C#",
+          "salary_per_day":60,
+          "main_skill":"C#",
+          "technologies":"[C++,Java,C#]",
+          "recruiter":"Zhorov",
+          "hired_at":"",
+          "status": true
+        },
+        {
+          "id": 2,
+          "title": "Python",
+          "salary_per_day":70,
+          "main_skill":"Python",
+          "technologies":"[JS,Python,PHP]",
+          "recruiter":"Nezhorov",
+          "hired_at":"12-22-19",
+          "status": false
+        }
+      ],
+      "candidates": [
+        {
+          "id": 1,
+          "first_name": "Grisha",
+          "last_name": "Gri",
+          "email":"grivas@vas.vas",
+          "phone":"11-12-123",
+          "main_skill":"C#"
+        },
+        {
+          "id": 2,
+          "first_name": "Grisha",
+          "last_name": "Gri-gri",
+          "email":"ggvas@vas.vas",
+          "phone":"11-12-124",
+          "main_skill":"C#"
+        },
+        {
+          "id": 3,
+          "first_name": "Grisha",
+          "last_name": "Grishov",
+          "email":"grgrvas@vas.vas",
+          "phone":"11-12-125",
+          "main_skill":"Java"
+        },
+        {
+            "id": 4,
+            "first_name": "Grisha",
+            "last_name": "Grigo",
+            "email":"grigovas@vas.vas",
+            "phone":"11-12-126",
+            "main_skill":"Python"
+          },
+          {
+            "id": 5,
+            "first_name": "Grisha",
+            "last_name": "Grigorov",
+            "email":"grigorovvas@vas.vas",
+            "phone":"11-12-127",
+            "main_skill":"Python"
+          }
+      ],
+      "interviews": [
+        {
+          "id": 1,
+          "vacancy": "Python",
+          "programmer": "SovsemNeVasikov",
+          "recruiter":"Zhorov",
+          "candidate":"Grigorov",
+          "datetime":"12-17-19",
+          "feedback":"not fine",
+          "result": false
+        },
+        {
+          "id": 2,
+          "vacancy": "Python",
+          "programmer": "SovsemNeVasikov",
+          "recruiter":"Nezhorov",
+          "candidate":"Grigo",
+          "datetime":"12-21-19",
+          "feedback":"fine",
+          "result": true
+        },
+        {
+          "id": 3,
+          "vacancy": "C#",
+          "programmer": "Vasikov",
+          "recruiter":"Nezhorov",
+          "candidate":"Gri",
+          "datetime":"12-31-19",
+          "feedback":"not fine",
+          "result": false
+        }
+      ]      
+  }

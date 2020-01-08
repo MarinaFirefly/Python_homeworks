@@ -88,3 +88,4 @@ class Candidate(Employee):
 
     def work(self):
         raise TypeError
+    

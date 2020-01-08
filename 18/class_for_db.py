@@ -14,7 +14,7 @@ class ForTablesInDb:
 
     def create_table(self):
         #create table for 5 types of objects
-        if self.table_name in ['programmers','recruiters','candidates','vacancies','iterviews']:
+        if self.table_name in ['programmers','recruiters','candidates','vacancies','interviews']:
             #only tables with names same to classes names can be created
             fields = ''
             if self.table_name == 'programmers':
@@ -35,8 +35,8 @@ class ForTablesInDb:
                 fields = """CREATE TABLE IF NOT EXISTS vacancies
                     (id serial, title text, salary_per_day integer, main_skills text, 
                     technoloies text, recruiter text, hired_at text, status_of_vacncy boolean)"""
-            elif self.table_name == 'iterviews':
-                fields = """CREATE TABLE IF NOT EXISTS iterviews
+            elif self.table_name == 'interviews':
+                fields = """CREATE TABLE IF NOT EXISTS interviews
                 (id serial, vacancy text, programer text, recruiter text, 
                 candidate text, datetime_of_int text, feedback text, result text)"""
             conn = sqlite3.connect("data/employees.db")
@@ -70,7 +70,7 @@ class ForTablesInDb:
                     obj = [(id,obj.title,obj.salary_per_day,obj.mail_skills,obj.technologies,
                         obj.recruiter,obj.hired_at,obj.status_of_vacancy)]
                     val = "(?,?,?,?,?,?,?)"
-                elif self.table_name == 'iterviews':
+                elif self.table_name == 'interviews':
                     obj = [(id,obj.vacancy,obj.programmer,obj.recruiter,obj.candidate,
                         obj.datetime_of_int,obj.feedback,obj.result)]
             
@@ -122,4 +122,14 @@ progs.read_from_db()
 
 recruiter_sema = Recruiter("Sema","Senov","sem@sem.gamil.com","12-111-11","12-12-18",90)
 recrs = ForTablesInDb("recruiters")
+recrs.create_table()
 recrs.add_to_db(recruiter_sema)
+
+intrws = ForTablesInDb("interviews")
+intrws.create_table()
+
+canddts =ForTablesInDb("candidates")
+canddts.create_table()
+
+vacncs = ForTablesInDb("vacancies")
+vacncs.create_table()

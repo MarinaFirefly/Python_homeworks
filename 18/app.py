@@ -50,4 +50,4 @@ else:
         )
         f.write(message)
 finally:
-    print('Exception was handled. Check log for additional info!')
+    print('Main script was called!')
