@@ -43,8 +43,7 @@ class ForTablesInDb:
             cursor = conn.cursor()
             cursor.execute(fields)
             conn.close()
-        else:
-            print("Table with name {table} cannot be created!".format(table = self.table_name))
+        print("Table with name {table} cannot be created!".format(table = self.table_name))
 
     def add_to_db(self,obj):
         #add rows to db

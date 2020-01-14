@@ -5,7 +5,7 @@ from models.vacancy19 import Vacancy
 
 
 try:
-    handly_vacancy = input('Enter "Y" if you whant to enter handly')
+    handly_vacancy = input('Enter "Y" if you whant to enter handly ')
 
     new_vacancy = Vacancy('Java',100,'Java','[Java,C++]','Zhorov','',0)
     vacancy_title = new_vacancy.title
