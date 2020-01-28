@@ -9,25 +9,32 @@ let output = document.getElementById('output');
 let firstNum = 0;
 let secondNum = 0;
 let operation = '';
+let currentValue = '';
 
 //take from html pseudo array (all buttons with class='btn-primary')
 let listButtons = document.getElementsByClassName('btn-primary');
 //for elements in listButtons
-for (let i = 0; i < listButtons.length; i++){
+for (let i = 0; i < listButtons.length; i++) {
     //if text in the button digit or '.' add in to value of output (as string)
-    if ((listButtons[i].innerText < 10 && listButtons[i].innerText > -1) || listButtons[i].innerText === '.') {
-    listButtons[i].onclick = ()=> {output.value+=listButtons[i].innerText};
-    }
-    //if text in the button equals to some operation(=,-,*,/) code changes firstNum and makes value of output equal to ''
-    else if (listButtons[i].innerText === "+"||listButtons[i].innerText === "-"||listButtons[i].innerText === "*"||listButtons[i].innerText === "/"){
-        listButtons[i].onclick = () => {
-            firstNum += Number(output.value);
-            output.value = '';
-            if (listButtons[i].innerText === "+") operation = 'plus'
-            else if (listButtons[i].innerText === "-") operation = 'minus'
-            else if (listButtons[i].innerText === "*") operation = 'multiply'
-            else if (listButtons[i].innerText === "/") operation = 'divide'
-        };
+    listButtons[i].onclick = () => {
+        currentValue += listButtons[i].innerText
+        console.log(currentValue)
+        if (currentValue === '.' || (currentValue < 10 && currentValue > -1)) {
+            output.value += currentValue
+            currentValue = ''
+        }
+        else if (currentValue === '+' || currentValue === '-' || currentValue === '*' || currentValue === '/') {
+            if (operation === '+') output.value = Number(firstNum) + Number(output.value)
+            else if (operation === '-') output.value = Number(firstNum) - Number(output.value)
+            else if (operation === '*') output.value = Number(firstNum) * Number(output.value)
+            else if (operation === '/') output.value = Number(firstNum) / Number(output.value);
+            firstNum = Number(output.value);
+            console.log(firstNum)
+            output.value = ''
+            operation = currentValue
+            currentValue = ''
+        }
+
     };
 };
 
@@ -35,19 +42,19 @@ for (let i = 0; i < listButtons.length; i++){
 let btnEqual = document.getElementsByClassName('btn-primary')[14]
 btnEqual.onclick = () => {
     secondNum = Number(output.value);
-    if (operation === 'plus'){
+    if (operation === '+') {
         output.value = firstNum + secondNum;
         firstNum = 0;
     }
-    else if (operation === 'minus'){
+    else if (operation === '-') {
         output.value = firstNum - secondNum;
         firstNum = 0;
     }
-    else if (operation === 'multiply'){
+    else if (operation === '*') {
         output.value = firstNum * secondNum;
         firstNum = 0;
     }
-    else if (operation === 'divide'){
+    else if (operation === '+') {
         output.value = firstNum / secondNum;
         firstNum = 0;
     }
